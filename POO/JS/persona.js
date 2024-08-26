@@ -1,29 +1,54 @@
 class Persona {
-    constructor(nombre, edad, carrera) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.carrera = carrera;
+    constructor(nombre, edad, carrera, universidad) {
+      this.nombre = nombre;
+      this.edad = edad;
+      this.carrera = carrera;
+      this.universidad = universidad;
     }
-
+  
     saludar() {
-        console.log('Hola, mi nombre es ' + this.nombre + ' y tengo ' + this.edad + ' años.'); // consolo.log es lo mismo que print
+      return 'Hola, mi nombre es ' + this.nombre + ' y tengo ' + this.edad + ' años.'
     }
-
-    cumpleaños() {
-        this.edad = this.edad + 1;
-        console.log('¡Feliz cumpleaños! Ahora tengo ' + this,edad +  'años.');
+  
+    cumpleanios() {
+      return '¡Felicidades! tienes ' + this.edad + ' años.';
     }
-
+  
     estudiar() {
-        console.log('Estoy estudiando ' + this.carrera + '.');
+      return 'Estoy estudiando ' + this.carrera;
     }
-}
+   
+    Universidad() {
+        return 'Estoy en la universidad ' + this.universidad;
+      }
+  }
+  
+  // Crear una instancia de la clase Persona
+  const persona = new Persona( 'Mikaela' , 19, 'Ingeniería Industrial', 'Católica Boliviana San Pablo');
+  
+  // Inicializar los elementos HTML
+  const saludar = document.getElementById('saludar');
+  const edad = document.getElementById('edad');
+  const carrera = document.getElementById('carrera');
+  const universidad = document.getElementById('universidad');
+  
+  // Función para saludar
+  function botonSaludar() {
+    saludar.textContent = persona.saludar();
+  }
 
-function SaludoPersona1(){
-    //Crear una instancia de la clase Persona
-    //declara la var / const / let
-    const persona1 = new Persona("Ana", 22, "Ingeniería Informática");  
-    //Llamar a los métodos
-    persona1.saludar();
+  // Función para cumpleaños
+  function botonCumpleanios() {
+    edad.textContent = persona.cumpleanios();
+  }
+  
+  // Función para estudiar
+  function botonEstudiar() {
+    carrera.textContent = persona.estudiar();
+  }
 
-}
+  // Función para universidad
+  function botonUniversidad() {
+    universidad.textContent = persona.Universidad();
+  }
+
