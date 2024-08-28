@@ -7,24 +7,61 @@ class Persona {
     }
   
     saludar() {
-      return 'Hola, mi nombre es ' + this.nombre + ' y tengo ' + this.edad + ' años.'
+      return 'Hola, mi nombre es ' + this.nombre + '.'
     }
   
     cumpleanios() {
-      return '¡Felicidades! tienes ' + this.edad + ' años.';
+      return 'Tengo ' + this.edad + ' años.';
     }
   
     estudiar() {
-      return 'Estoy estudiando ' + this.carrera;
+      return 'Estudio ' + this.carrera;
     }
    
     Universidad() {
-        return 'Estoy en la universidad ' + this.universidad;
-      }
+     return 'Estudio en la Universidad ' + this.universidad;
+    }
+
+    Cambiar_nombre() {
+      this.nombre = prompt("Por favor escriba el nuevo nombre")
+      return 'Hola, mi nombre es ' + this.nombre + '.'
+    }
+
+    Nueva_edad() {
+      this.edad = prompt("¿Cuántos años tiene?")
+      return 'Tengo ' + this.edad + ' años.'
+    }
+
+    Nueva_carrera() {
+      this.carrera = prompt("¿Qué carrera estudias?")
+      return 'Soy estudiante de la carrera de ' + this.carrera + '.'
+    }
+
+    Nueva_universidad(){
+      this.universidad = prompt("¿En qué universidad estudias?")
+      return 'Estudio en la Universidad ' + this.universidad + '.'
+    }
+
+    Eliminar_saludo() {
+      return 'Hola, mi nombre es   ';
+    }
+  
+    Eliminar_edad() {
+      return 'Tengo   -   años';
+    }
+  
+    Eliminar_carrera() {
+      return 'Estudio ' ;
+    }
+   
+    Eliminar_universidad() {
+     return 'Estudio en la Universidad  ' ;
+    }
+
   }
   
   // Crear una instancia de la clase Persona
-  const persona = new Persona( 'Mikaela' , 19, 'Ingeniería Industrial', 'Católica Boliviana San Pablo');
+  const persona = new Persona( 'Mikaela' , 19, 'Ingeniería Industrial.', 'Católica Boliviana San Pablo.');
   
   // Inicializar los elementos HTML
   const saludar = document.getElementById('saludar');
@@ -52,3 +89,42 @@ class Persona {
     universidad.textContent = persona.Universidad();
   }
 
+  // Función Cambiar nombre
+  function botonCambiarnombre() {
+    saludar.textContent = persona.Cambiar_nombre();
+  }
+
+  // Función Nueva edad
+  function botonNuevaedad() {
+    edad.textContent = persona.Nueva_edad();
+  }
+
+  // Función Nueva carrera
+  function botonNuevacarrera() {
+    carrera.textContent = persona.Nueva_carrera();
+  }
+
+  // Función Nueva universidad
+  function botonNuevauniversidad(){
+    universidad.textContent = persona.Nueva_universidad();
+  }
+
+  // Función Eliminar nombre
+  function botonEliminarnombre(){
+    saludar.textContent = persona.Eliminar_saludo();
+  }
+
+  // Función Eliminar edad
+  function botonEliminaredad(){
+    edad.textContent = persona.Eliminar_edad();
+  }
+
+  // Función Eliminar carrera
+  function botonEliminarcarrera(){
+    carrera.textContent = persona.Eliminar_carrera();
+  }
+
+  // Función Eliminar universidad
+  function botonEliminaruniversidad(){
+    universidad.textContent = persona.Eliminar_universidad();
+  }
