@@ -43,20 +43,22 @@ class Persona {
     }
 
     Eliminar_saludo() {
-      return 'Hola, mi nombre es   ';
+      return '  ';
     }
   
     Eliminar_edad() {
-      return 'Tengo   -   años';
+      return '   ';
     }
-  
+
     Eliminar_carrera() {
-      return 'Estudio ' ;
+      return '  ' ;
     }
-   
+    
     Eliminar_universidad() {
-     return 'Estudio en la Universidad  ' ;
+     return '  ' ;
     }
+
+    
 
   }
   
