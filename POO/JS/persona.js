@@ -24,12 +24,19 @@ class Persona {
 
     Cambiar_nombre() {
       this.nombre = prompt("Por favor escriba el nuevo nombre")
+    while (this.edad = '  '){
+      alert(" ")
+    }
       return 'Hola, mi nombre es ' + this.nombre + '.'
     }
 
     Nueva_edad() {
-      this.edad = prompt("¿Cuántos años tiene?")
-      return 'Tengo ' + this.edad + ' años.'
+      this.edad = prompt("¿Cuántos años tiene?");
+    while (this.edad <= 0) {
+        alert("La edad no puede ser un número negativo. Por favor, ingrese un valor válido.");
+        this.edad = prompt("¿Cuántos años tiene?");
+      }
+      return 'Tengo ' + this.edad + ' años.';
     }
 
     Nueva_carrera() {
@@ -57,8 +64,6 @@ class Persona {
     Eliminar_universidad() {
      return '  ' ;
     }
-
-    
 
   }
   
