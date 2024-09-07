@@ -23,11 +23,12 @@ class Persona {
     }
 
     Cambiar_nombre() {
-      this.nombre = prompt("Por favor escriba el nuevo nombre")
-    while (this.edad = '  '){
-      alert(" ")
-    }
-      return 'Hola, mi nombre es ' + this.nombre + '.'
+      this.nombre = prompt("Ingresa un nuevo nombre");
+      while (!this.nombre || !isNaN(this.nombre)) {  
+          alert("Nombre invalido, coloca letras porfavor");
+          this.nombre = prompt("Ingresa nuevamente el nombre");
+        }
+        return 'Hola, mi nombre es ' + this.nombre + '.'
     }
 
     Nueva_edad() {
