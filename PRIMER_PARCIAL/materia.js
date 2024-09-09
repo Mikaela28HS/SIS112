@@ -1,5 +1,5 @@
 class Materia {
-    constructor(nombreMateria, sigla, docente, horarios, aula, prerequisito, carrera, universidad, cantidadinscritos ) {
+    constructor(nombreMateria, sigla, docente, horarios, aula, prerequisito, carrera, universidad, cantidadinscritos, modalidad, calificacionMinimaAprobacion, temas, ubicacionLatitudLongitud ) {
       this.nombreMateria = nombreMateria;
       this.sigla = sigla;
       this.docente = docente;
@@ -9,6 +9,10 @@ class Materia {
       this.carrera = carrera;
       this.universidad = universidad;
       this.cantidadinscritos = cantidadinscritos;
+      this.modalidad = modalidad;
+      this.calificacionMinimaAprobacion = calificacionMinimaAprobacion;
+      this.temas = temas;
+      this.ubicacionLatitudLongitud = ubicacionLatitudLongitud;
     }
   
     //CREAR MATERIA
@@ -46,6 +50,22 @@ class Materia {
 
     CantidadInscritos() {
       return 'Esta materia tiene ' + this.cantidadinscritos + ' inscritos.'
+    }
+
+    Modalidad() {
+      return 'Esta materia tiene la modalidad: ' + this.modalidad;
+    }
+
+    CalificacionMinimaAprobacion() {
+      return 'La materia de ' + this.nombreMateria + ' tiene como calificacion mínima de aprobación la nota de: ' + this.calificacionMinimaAprobacion;
+    }
+
+    Temas() {
+      return 'Tiene como temas los siguientes: ' + this.temas;
+    }
+
+    UbicacionLatitudLongitud() {
+      return 'El aula en donde se da la materia tiene como ubicación las coordenadas: ' + this.ubicacionLatitudLongitud;
     }
 
     //Modificar 
@@ -98,6 +118,36 @@ class Materia {
       return 'Esta materia tiene ' + this.cantidadinscritos + ' inscritos.'
     }
 
+    Modificar_Modalidad() { 
+      let modalidad;
+  
+      do {
+          modalidad = prompt("¿Cuál es la modalidad de la materia? (presencial, virtual o híbrido)").toLowerCase();
+      } while (modalidad !== "presencial" && modalidad !== "virtual" && modalidad !== "híbrido");
+      this.modalidad = modalidad;
+      return 'Esta materia tiene la modalidad: ' + this.modalidad;
+    }
+
+    Modificar_CalificacionMinimaAprobacion() {
+      this.calificacionMinimaAprobacion = parseFloat(prompt("Ingrese la calificación mínima para la aprobación de la materia"));
+  
+      while (this.calificacionMinimaAprobacion <= 0 || !Number.isInteger(this.calificacionMinimaAprobacion)) {
+          alert("La calificación no puede ser un número negativo ni tener decimales. Por favor, ingrese un valor válido.");
+          this.calificacionMinimaAprobacion = parseFloat(prompt("¿Cuál es la calificación mínima para la aprobación de la materia?"));
+      }
+      return 'La materia tiene como calificación mínima de aprobación la nota de: ' + this.calificacionMinimaAprobacion;
+    }
+  
+    Modificar_Temas() {
+      this.temas = prompt("Ingrese los temas de contenido de la materia");
+      return 'Tiene como temas los siguientes: ' + this.temas;
+    }
+
+    Modificar_UbicacionLatitudLongitud() {
+      this.ubicacionLatitudLongitud = prompt("Ingrese la ubición (latitud-lontitud) del aula en donde se da la materia ");
+      return 'El aula en donde se da la materia tiene como ubicación las coordenadas: ' + this.ubicacionLatitudLongitud;
+    }
+
     //Eliminar
     Eliminar_Asignatura() {
       return '  ';
@@ -134,17 +184,33 @@ class Materia {
     Eliminar_CantidadInscritos() { 
       return '  ' ;
     }
+
+    Eliminar_Modalidad() {
+      return '  ' ;
+    }
+
+    Eliminar_CalificacionMinimaAprobacion() {
+      return '  ' ;
+    }
+
+    Eliminar_Temas() { 
+      return '  ' ;
+    }
+
+    Eliminar_UbicacionLatitudLongitud() {
+      return '  ' ;
+    }
   }
   
   // Crear una instancia de Materias
   const materias = {
-    Calculo: new Materia('CÁLCULO I', 'MAT-132', 'ASPIAZU MELGAR VICTOR HUGO', 'Lunes 7:30-9, Miercoles 7:30-9', '10A-N4', 'MATEMÁTICA BÁSICA', 'Ingeniería Industrial', 'UCB', 33),
-    Antropologia: new Materia('ANTROPOLOGÍA Y VALORES', 'FHC-101', 'DE LA BARRA BARRA EXALTA GABRIELA', 'Martes 9:10-10:40, Jueves 9:10-10:40', '4A-N3, B2-1', 'Pensamiento Crítico', 'Ingeniería Industrial', 'UCB', 62),
-    Fisica: new Materia('FÍSICA I Y LABORATORIO', 'FIS-111', 'LOBO LIMPIAS VICTOR HUGO', 'Lunes 9:10-10:40, Miercoles 9:10-10:40', 'E2-5', 'NINGUNA', 'Ingeniería Industrial', 'UCB', 45),
-    LabFisica: new Materia('FÍSICA I Y LABORATORIO', 'FIS-111', 'ALVAREZ CABALLERO ROBERTO CARLOS', 'Miercoles 10:50-12:20', 'F1-2 ', 'NINGUNA', 'Ingeniería Industrial', 'UCB', 15),
-    Manufactura: new Materia('MANUFACTURA Y MECANIZADO', 'IND-112', 'SALVATIERRA ARANCIBIA JORGE ENRIQUE', 'Martes-Jueves-Viernes 07:30-9', '12A-N4, F1-2', 'INTRODUCCIÓN AL DISEÑO INDUSTRIAL', 'Ingeniería Industrial', 'UCB', 14),
-    Probabilidad: new Materia('PROBABILIDAD Y ESTADÍSTICA I', 'MAT-142', 'BARCA MAGARZO CARMEN SILVIA', 'Martes-Jueves 10:50-12:20', 'D2-1', 'NINGUNO', 'Ingeniería Industrial', 'UCB', 33),
-    Programacion: new Materia('PROGRAMACIÓN I', 'SIS-112', 'ESCALANTE USTARIZ EDDY', 'Lunes 10:50-12:20, Viernes 9:10-11:35', 'C2-2', 'INTRODUCCIÓN A LA PROGRAMACIÓN', 'Ingeniería Industrial', 'UCB', 15),
+    Calculo: new Materia('CÁLCULO I', 'MAT-132', 'ASPIAZU MELGAR VICTOR HUGO', 'Lunes 7:30-9, Miercoles 7:30-9', '10A-N4', 'MATEMÁTICA BÁSICA', 'Ingeniería Industrial', 'UCB', 33, 'presencial', 60, 'Funciones, Límites, Derivadas', '-17.695191,-63.1514697'),
+    Antropologia: new Materia('ANTROPOLOGÍA Y VALORES', 'FHC-101', 'DE LA BARRA BARRA EXALTA GABRIELA', 'Martes 9:10-10:40, Jueves 9:10-10:40', '4A-N3, B2-1', 'Pensamiento Crítico', 'Ingeniería Industrial', 'UCB', 62, 'presencial', 60, 'La naturaleza del ser humano, Ética y Valores universales', '-17.695191,-63.1514697'),
+    Fisica: new Materia('FÍSICA I Y LABORATORIO', 'FIS-111', 'LOBO LIMPIAS VICTOR HUGO', 'Lunes 9:10-10:40, Miercoles 9:10-10:40', 'E2-5', 'NINGUNA', 'Ingeniería Industrial', 'UCB', 45, 'presencial', 60, 'Concersión de unidades, Vectores', '-17.695191,-63.1514697'),
+    LabFisica: new Materia('FÍSICA I Y LABORATORIO', 'FIS-111', 'ALVAREZ CABALLERO ROBERTO CARLOS', 'Miercoles 10:50-12:20', 'F1-2 ', 'NINGUNA', 'Ingeniería Industrial', 'UCB', 15, 'presencial', 60, 'Movimiento de cuerpos, Vectores', '-17.695191,-63.1514697'),
+    Manufactura: new Materia('MANUFACTURA Y MECANIZADO', 'IND-112', 'SALVATIERRA ARANCIBIA JORGE ENRIQUE', 'Martes-Jueves-Viernes 07:30-9', '12A-N4, F1-2', 'INTRODUCCIÓN AL DISEÑO INDUSTRIAL', 'Ingeniería Industrial', 'UCB', 14, 'presencial', 60, 'Propiedades de los materiales, Producción', '-17.695191,-63.1514697'),
+    Probabilidad: new Materia('PROBABILIDAD Y ESTADÍSTICA I', 'MAT-142', 'BARCA MAGARZO CARMEN SILVIA', 'Martes-Jueves 10:50-12:20', 'D2-1', 'NINGUNO', 'Ingeniería Industrial', 'UCB', 33, 'presencial', 60, 'Organización de datos, Medidas de dispersión', '-17.695191,-63.1514697'),
+    Programacion: new Materia('PROGRAMACIÓN I', 'SIS-112', 'ESCALANTE USTARIZ EDDY', 'Lunes 10:50-12:20, Viernes 9:10-11:35', 'C2-2', 'INTRODUCCIÓN A LA PROGRAMACIÓN', 'Ingeniería Industrial', 'UCB', 15, 'presencial', 60, 'Programación Orientada a Objetos',  '-17.695191,-63.1514697'),
   };
   
 
@@ -162,6 +228,10 @@ class Materia {
     document.getElementById('carrera').textContent = materiaSeleccionada.Carrera();
     document.getElementById('universidad').textContent = materiaSeleccionada.Universidad();
     document.getElementById('cantidadinscritos').textContent = materiaSeleccionada.CantidadInscritos();
+    document.getElementById('modalidad').textContent = materiaSeleccionada.Modalidad();
+    document.getElementById('calificacionMinimaAprobacion').textContent = materiaSeleccionada.CalificacionMinimaAprobacion();
+    document.getElementById('temas').textContent = materiaSeleccionada.Temas();
+    document.getElementById('ubicacionLatitudLongitud').textContent = materiaSeleccionada.UbicacionLatitudLongitud();
   }
 
   // Botones de modificar
@@ -219,6 +289,30 @@ class Materia {
     document.getElementById('cantidadinscritos').textContent = materiaSeleccionada.Modificar_CantidadInscritos();
   }
 
+  function botonModificarModalidad() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('modalidad').textContent = materiaSeleccionada.Modificar_Modalidad();
+  }
+  
+  function botonModificarCalificacionMinimaAprobacion() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('calificacionMinimaAprobacion').textContent = materiaSeleccionada.Modificar_CalificacionMinimaAprobacion();
+  }
+
+  function botonModificarTemas() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('temas').textContent = materiaSeleccionada.Modificar_Temas();
+  }
+
+  function botonModificarUbicacionLatitudLongitud() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('ubicacionLatitudLontitud').textContent = materiaSeleccionada.Modificar_UbicacionLatitudLongitud();
+  }
+
   // Botones de eliminar
   function botonEliminarAsignatura() {
     const select = document.getElementById('materia-select').value;
@@ -273,3 +367,29 @@ class Materia {
     const materiaSeleccionada = materias[select];
     document.getElementById('cantidadinscritos').textContent = materiaSeleccionada.Eliminar_CantidadInscritos();
   }
+
+  function botonEliminarModalidad() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('modalidad').textContent = materiaSeleccionada.Eliminar_Modalidad();
+  }
+
+  function botonEliminarCalificacionMinimaAprobacion() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('calificacionMinimaAprobacion').textContent = materiaSeleccionada.Eliminar_CalificacionMinimaAprobacion();
+  }
+
+  function botonEliminarTemas() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('temas').textContent = materiaSeleccionada.Eliminar_Temas();
+  }
+
+  function botonEliminarUbicacionLatitudLongitud() {
+    const select = document.getElementById('materia-select').value;
+    const materiaSeleccionada = materias[select];
+    document.getElementById('ubicacionLatitudLongitud').textContent = materiaSeleccionada.Eliminar_UbicacionLatitudLongitud();
+  }
+
+
