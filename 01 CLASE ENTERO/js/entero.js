@@ -44,6 +44,31 @@ class Entero {
     esPositivoNegativo() {
         return (this.Num >= 0)
     }
+
+    // Calcular el factorial de Num
+    factorial() {
+        if (this.Num < 0) return "Factorial no está definido para números negativos";
+        let fact = 1;
+        for (let i = 1; i <= this.Num; i++) {
+            fact *= i;
+        }
+        return `El factorial de ${this.Num} es ${fact}`;
+    }
+
+    // Verifica si Num es un número perfecto
+    esPerfecto() {
+        if (this.Num <= 0) return `${this.Num} no es un número perfecto`;
+
+        let sumaDivisores = 0;
+        for (let i = 1; i < this.Num; i++) {
+            if (this.Num % i === 0) {
+                sumaDivisores += i;
+            }
+        }
+
+        return sumaDivisores === this.Num ? `${this.Num} es un número perfecto`
+             : `${this.Num} no es un número perfecto`;
+    }
         
 }
 
@@ -84,4 +109,16 @@ function esPositivoNegativoNum() {
     var respuesta = ClaseEntero.esPositivoNegativo();
     var resp = respuesta ? "Es Num Positivo":"Es Num Negativo";
     ClaseEntero.showResultado(resp);
+}
+
+// Calcular factorial
+function calcularFactorial() {
+    var respuesta = ClaseEntero.factorial();
+    ClaseEntero.showResultado(respuesta);
+}
+
+// Verificar si es un número perfecto
+function verificarPerfecto() {
+    var respuesta = ClaseEntero.esPerfecto();
+    ClaseEntero.showResultado(respuesta);
 }
