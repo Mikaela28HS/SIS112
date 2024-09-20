@@ -41,6 +41,8 @@ class Entero:
         suma_divisores = sum(i for i in range(1, self.Num) if self.Num % i == 0)
         return suma_divisores == self.Num
 
+    def esPrimo(self):
+        
     def menu(self):
         while True:
             print("\nMenú:")
