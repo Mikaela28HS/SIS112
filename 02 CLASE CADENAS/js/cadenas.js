@@ -49,6 +49,44 @@ class Cadena {
     aMinusculas() { //Obtiene la cadena transformada en minuscula
       return this.cadena.toLowerCase();
     }
+
+    // 1. Transformación de números a números romanos
+    static aNumeroRomano(numero) {
+      const valores = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+      const simbolos = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+      let resultado = '';
+
+      for (let i = 0; i < valores.length; i++) {
+          while (numero >= valores[i]) {
+              resultado += simbolos[i];
+              numero -= valores[i];
+          }
+      }
+      return resultado;
+    }
+
+    // 2. Generación de texto aleatorio
+    static generarTextoAleatorio(palabras) {
+      const caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      let resultado = '';
+      for (let i = 0; i < palabras; i++) {
+          let palabra = '';
+          const longitud = Math.floor(Math.random() * 5) + 3; // Palabras de 3 a 7 caracteres
+          for (let j = 0; j < longitud; j++) {
+              palabra += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+          }
+          resultado += palabra + ' ';
+      }
+      return resultado.trim();
+    }
+
+    // 3. Transformación de ASCII a Texto
+    static asciiATexto(num) {
+        if (num < 0 || num > 127) {
+          throw new Error("El número debe estar entre 0 y 127.");
+        }
+      return String.fromCharCode(num); // Convierte el número a su representación ASCII
+    }
   }
   
   let cadena = new Cadena('');
@@ -91,6 +129,15 @@ class Cadena {
       case 'aMinusculas':
         resultadoDiv.innerHTML = `A minúsculas: ${cadena.aMinusculas()}`;
         break;
+        case 'aNumeroRomano':
+          resultadoDiv.innerHTML = `Número Romano: ${Cadena.aNumeroRomano(parseInt(valorInput))}`;
+          break;
+      case 'generarTextoAleatorio':
+          resultadoDiv.innerHTML = `Texto Aleatorio: ${Cadena.generarTextoAleatorio(parseInt(valorInput))}`;
+          break;
+      case 'asciiATexto':
+          resultadoDiv.innerHTML = `Texto ASCII: ${Cadena.asciiATexto(parseInt(valorInput))}`;
+          break;
       default:
         resultadoDiv.innerHTML = 'Método no reconocido.';
     }
