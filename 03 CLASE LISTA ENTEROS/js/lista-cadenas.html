@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cadenas - Temática Italiana</title>
+    <style>
+        body {
+            background-image: url('Sorrento.jpg'); /* Imagen de las costas italianas */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            border: 5px solid #008C45; /* Verde italiano */
+        }
+
+        h1 {
+            color: #CD212A; /* Rojo italiano */
+        }
+
+        .italy-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .italy-img {
+            width: 150px;
+            height: auto;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #008C45; /* Verde italiano */
+            border-radius: 5px;
+        }
+
+        button {
+            width: 80%;
+            padding: 10px;
+            background-color: #CD212A; /* Rojo italiano */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #A8101E;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #008C45;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Cadenas</h1>
+
+        <!-- Imagen temática italiana -->
+        <div class="italy-container">
+            <img src="italia.jpg" alt="Bandera de Italia" class="italy-img">
+        </div>
+
+        <!-- Formulario para agregar cadenas -->
+        <div class="form">
+            <input type="text" id="cadena" placeholder="Agregar una cadena">
+            <button id="agregarBtn">Agregar</button>
+        </div>
+
+        <!-- Formulario para eliminar una cadena -->
+        <div class="form">
+            <input type="text" id="cadenaEliminar" placeholder="Eliminar una cadena">
+            <button id="eliminarBtn">Eliminar</button>
+        </div>
+
+        <!-- Formulario para buscar una cadena -->
+        <div class="form">
+            <input type="text" id="cadenaBuscar" placeholder="Buscar una cadena">
+            <button id="buscarBtn">Buscar</button>
+        </div>
+
+        <!-- Botón para ordenar la lista -->
+        <div class="form">
+            <button id="ordenarBtn">Ordenar Lista</button>
+        </div>
+
+        <h2>Lista de Cadenas:</h2>
+        <ul id="lista"></ul>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="lista-cadenas.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Enteros - Snoopy</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .snoopy-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .snoopy-img {
+            width: 100px;
+            height: auto;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #87ceeb;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 80%;
+            padding: 10px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #ff4500;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #87ceeb;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Lista de Enteros</h1>
+        
+        <!-- Imagen de Snoopy -->
+        <div class="snoopy-container">
+            <img src="snoopy1.jpg" alt="Snoopy" class="snoopy-img">
+        </div>
+
+        <!-- Formulario para agregar números -->
+        <div class="form">
+            <input type="number" id="numero" placeholder="Agrega un número">
+            <button id="agregarBtn">Agregar</button>
+        </div>
+
+        <!-- Formulario para eliminar un número -->
+        <div class="form">
+            <input type="number" id="numeroEliminar" placeholder="Elimina un número">
+            <button id="eliminarBtn">Eliminar</button>
+        </div>
+
+        <!-- Formulario para buscar un número -->
+        <div class="form">
+            <input type="number" id="numeroBuscar" placeholder="Busca un número">
+            <button id="buscarBtn">Buscar</button>
+        </div>
+
+        <!-- Botón para ordenar la lista -->
+        <div class="form">
+            <button id="ordenarBtn">Ordenar Lista</button>
+        </div>
+
+        <h2>Lista:</h2>
+        <ul id="lista"></ul>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="lista-enteros.js"></script>
+</body>
+</html>
+
