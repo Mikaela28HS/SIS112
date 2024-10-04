@@ -1,4 +1,4 @@
-class ListaEnteros {
+class ListaCadenas {
     constructor() {
         this.lista = [];
     }
@@ -11,9 +11,9 @@ class ListaEnteros {
     actualizarLista() {
         const listaElemento = document.getElementById('lista');
         listaElemento.innerHTML = '';
-        this.lista.forEach(num => {
+        this.lista.forEach(cadena => {
             const li = document.createElement('li');
-            li.textContent = num;
+            li.textContent = cadena;
             listaElemento.appendChild(li);
         });
     }
@@ -24,7 +24,7 @@ class ListaEnteros {
             this.lista.splice(index, 1);
             this.actualizarLista();
         } else {
-            alert('Número no encontrado.');
+            alert('Cadena no encontrada.');
         }
     }
 
@@ -33,12 +33,39 @@ class ListaEnteros {
     }
 
     ordenar() {
-        this.lista.sort((a, b) => a - b); // Orden ascendente
+        this.lista.sort(); // Ordenar cadenas alfabéticamente
         this.actualizarLista();
     }
 }
 
 let miLista = new ListaCadenas();
-miLista.agregar('Hola');
-miLista.agregar('Mundo');
-console.log(miLista.lista); // Imprime ['Hola', 'Mundo']
+
+function agregar() {
+    const valor = document.getElementById('cadena').value;
+    if (valor) {
+        miLista.agregar(valor);
+        document.getElementById('cadena').value = '';
+    } else {
+        alert('Por favor, ingresa una cadena.');
+    }
+}
+
+function eliminar() {
+    const valor = document.getElementById('cadenaEliminar').value;
+    miLista.eliminar(valor);
+    document.getElementById('cadenaEliminar').value = '';
+}
+
+function ordenar() {
+    miLista.ordenar();
+}
+
+function buscar() {
+    const valor = document.getElementById('cadenaBuscar').value;
+    const index = miLista.buscar(valor);
+    if (index !== -1) {
+        alert(`Cadena encontrada en la posición: ${index}`);
+    } else {
+        alert('Cadena no encontrada.');
+    }
+}
