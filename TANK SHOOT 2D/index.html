@@ -5,23 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tank Shoot 2D</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
         body {
-            background-color: black;
-            color: white;
+            background-color: #000;
             font-family: 'Press Start 2P', cursive;
+            color: #FFF;
             text-align: center;
             margin: 0;
-        }
-
-        h1 {
-            color: #FF4500;
-            font-size: 48px;
-            margin-top: 100px;
-        }
-
-        p {
-            color: white;
-            font-size: 14px;
+            padding: 0;
         }
 
         .container {
@@ -32,36 +24,66 @@
             height: 100vh;
         }
 
+        .high-score {
+            font-size: 20px;
+            color: #FFD700;
+            animation: blink 1s infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        h1 {
+            color: #FF4500;
+            font-size: 50px;
+            text-shadow: 2px 2px #000;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 14px;
+            color: #888;
+            margin: 10px 0;
+        }
+
         .start-button {
-            background-color: #333;
-            color: white;
-            border: 2px solid #777;
-            padding: 15px 30px;
-            font-size: 16px;
+            background-color: #111;
+            border: 2px solid #FF4500;
+            color: #FF4500;
+            padding: 15px 40px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             cursor: pointer;
-            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            box-shadow: 0px 0px 10px #FF4500;
         }
 
         .start-button:hover {
-            background-color: #444;
-        }
-
-        .high-score {
-            color: white;
-            font-size: 18px;
+            background-color: #FF4500;
+            color: #000;
+            transform: scale(1.05);
         }
 
         .footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: gray;
+            font-size: 14px;
+            color: #888;
+            margin-top: 40px;
+        }
+
+        .glow {
+            text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 15px #FF4500, 0 0 20px #FF4500;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="high-score">HIGH SCORE 500</div>
-        <h1>TANK SHOOT 2D</h1>
+        <h1 class="glow">TANK SHOOT 2D</h1>
         <p>Version 1.003 (c) Darksun Tech 2010-2019</p>
         <button class="start-button">1P GAME</button>
         <div class="footer">www.tankshoot.com</div>
