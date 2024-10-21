@@ -1,4 +1,4 @@
-class Tank{
+class EnemyTank{
     posX;
     posY;
     direccionDisparo;
