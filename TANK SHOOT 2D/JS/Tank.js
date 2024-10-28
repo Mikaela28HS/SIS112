@@ -46,4 +46,11 @@ class Tank{
     rotarTank(_direccionDisparo){
         this.direccionDisparo = _direccionDisparo;
     }
+
+    // Dibujamos los elementos en el canvas  //El tanque se dibuja solito, ya no se lo dibuja en main
+    drawTank(tank) {
+        ctx.fillStyle = 'green';
+        // Representamos el tanque como un cuadrado
+        ctx.fillRect(this.posX, this.posY, 50, 50);
+    }
 }
