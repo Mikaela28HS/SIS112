@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibujo de Matriz en Canvas</title>
-    <link rel="stylesheet" href="CSS/matrix.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matrices</title>
+        <link rel="stylesheet" href="CSS/matrix.css">
+    </head>
 <body>
+    <!-- Contenedor principal para el canvas y los botones -->
     <div class="main-container">
         <canvas id="matrixCanvas" width="500" height="500"></canvas>
         <div class="button-container">
-            <button onclick="matriz.llenarMatrizAleatorio()">Patrón Aleatorio</button>
-            <button onclick="matriz.llenarMatrizDiagonal()">Patrón Diagonal</button>
-            <button onclick="matriz.llenarMatrizBordes()">Patrón de Bordes</button>
-            <button onclick="matriz.llenarMatrizPrimeraFila()">Llenar Matriz Primera Fila</button>
-            <button onclick="matriz.llenarMatrizPrimeraColumna()">Llenar Matriz Primera Columna</button>
-            <button onclick="matriz.llenarMatrizDiagonal2()">Patrón Diagonal 2</button>
-            <button onclick="matriz.llenarMatrizBordes2()">Patrón de Bordes 2</button>
-            <button onclick="matriz.llenarMatrizPiramide()">Patron Matriz Piramide</button>
-            <button onclick="matriz.llenarMatriz4Bordes()">Patron Matriz 4 Bordes</button>
-            <button onclick="matriz.llenarMatrizSecuencia1()">Patron Secuencia 1</button>
+            <button onclick="matriz.llenarMatrizCuadradoRelleno()">Cuadrado Relleno</button>
+            <button onclick="matriz.llenarMatrizMarcoInterno()">Marco Interno</button>
+            <button onclick="matriz.llenarMatrizCruces()">Cruces</button>
+            <button onclick="matriz.llenarMatrizBordesYDiagonales()">Bordes y Diagonales</button>
+            <button onclick="matriz.llenarMatrizBandera()">Bandera</button>
+            <button onclick="matriz.llenarMatrizRellenoAlterno()">Relleno Alterno</button>
+            <button onclick="matriz.llenarMatrizZigZagHorizontal()">ZigZag Horizontal</button>
+            <button onclick="matriz.llenarMatrizEspiral()">Espiral</button>
+            <button onclick="matriz.llenarMatrizTrianguloSuperiorIzquierdo()">Triángulo Superior Izquierdo</button>
+            <button onclick="matriz.llenarMatrizTrianguloInferiorDerecho()">Triángulo Superior Derecho</button>
+            <button onclick="matriz.llenarMatrizCuadricula()">Cuadrícula</button>
         </div>
             
         <div class="button-container">
-            <button onclick="matriz.llenarMatrizSecuencia_0_al_7()">Patron Secuencia 0 al 7</button>
-            <button onclick="matriz.llenarMatrizSecuencia_0_al_7_Col()">Patron Secuencia 0 al 7 en Columnas</button>
-            <button onclick="matriz.llenarMatrizSecuencia3()">Patron Secuencia 3</button>
-            <button onclick="matriz.llenarMatrizSecuencia4()">Patron Secuencia 4</button>
+            <button onclick="matriz.llenarMatrizTrianguloCentral()">Triángulo Central</button>
+            <button onclick="matriz.llenarMatrizRombosConcentricos()">Rombos Concentricos</button>
+            <button onclick="matriz.llenarMatrizCrucesConcentricas()">Cruces Concentricas</button>
+            <button onclick="matriz.llenarMatrizBanderaDiagonal()">Bandera Diagonal</button>
+            <button onclick="matriz.llenarMatrizCuadradoDentroCuadrado()">Cuadradro dentro Cuadrado</button>
+            <button onclick="matriz.llenarMatrizBordesCentro()">Bordes Centro</button>
+            <button onclick="matriz.llenarMatrizLineasParalelas()">Lineas Paralelas</button>
+            <button onclick="matriz.llenarMatrizMarcasCruz()">Marcas Cruz</button>
+            <button onclick="matriz.llenarMatrizRomboEsquinas()">Rombo Esquinas</button>
+            <button onclick="matriz.llenarMatrizAjedrez()">Ajedrez</button>
+            <button onclick="matriz.llenarMatrizRelojDeArena()">Reloj de Arena</button>
         </div>
     </div>
     

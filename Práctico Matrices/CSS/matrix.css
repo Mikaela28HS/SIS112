@@ -7,9 +7,13 @@ html, body {
     overflow: hidden;
 }
 
-/* Estilo del cuerpo y fondo */
+/* Estilo del cuerpo y fondo con temática de One Direction */
 body {
-    background-color: #20232a;
+    background-color: #ff5e5e;
+    background-image: url('../imagen/theworld.jpg'); /* Cambia la ruta aquí según la ubicación real de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     display: flex;
     align-items: center;
@@ -22,6 +26,10 @@ body {
     display: flex;
     align-items: center;
     gap: 20px; /* Espacio entre el canvas y los botones */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente para resaltar el contenido */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para el contenedor de botones */
@@ -31,31 +39,31 @@ body {
     gap: 10px; /* Espacio entre cada botón */
 }
 
-/* Estilos para los botones */
+/* Estilos para los botones transparentes */
 button {
     padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
-    color: #20232a;
-    background-color: #61dafb;
-    border: none;
+    color: white;
+    background-color: rgba(210, 35, 42, 0.3); /* Rojo translúcido para transparencia */
+    border: 2px solid rgba(255, 255, 255, 0.6); /* Borde blanco semi-transparente */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #21a1f1;
+    background-color: rgba(210, 35, 42, 0.5); /* Fondo ligeramente menos transparente al hacer hover */
     transform: scale(1.05);
 }
 
 button:active {
-    background-color: #1a85c2;
+    background-color: rgba(210, 35, 42, 0.7); /* Fondo aún menos transparente al hacer clic */
 }
 
 /* Estilo del canvas */
 canvas {
-    border: 3px solid #61dafb;
+    border: 3px solid #0b0303;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     max-width: 90vw;
